@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from first_page import views
-
+from django.conf.urls import url 
+from first_page import views as core_views
 
 urlpatterns = [
     path('', views.first_homePage, name='first_homePage'),
     path('About/', views.about_basePage, name='about_basePage'), 
     path('Profile/', views.profile_basePage, name='profile_basePage'), 
     path('admin/', admin.site.urls),
+    url(r'^signup/$', core_views.signup, name='signup'),
 ]

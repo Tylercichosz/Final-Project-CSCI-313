@@ -1,3 +1,20 @@
 from django.db import models
 
-# Create your models here.
+class Course(models.Model):
+    course_id = models.CharField(max_length=5)
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    instructor = models.CharField(max_length=100)
+    number_Class_Days = models.CharField(max_length=80)
+    extra_Assign = models.CharField(max_length=80)
+
+class StudentSign(models.Model):
+    student_id = models.CharField(max_length=7)
+    first_Name = models.CharField(max_length=30)
+    last_Name = models.CharField(max_length= 50)
+    userName = models.CharField(max_length= 20)
+    passWord = models.CharField(max_length= 12)
+
+class StudentLog(models.Model):
+    userName = models.CharField(max_length=20)
+    passWord = models.CharField(max_length=12)
