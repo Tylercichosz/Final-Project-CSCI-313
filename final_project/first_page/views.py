@@ -11,7 +11,7 @@ def profile_basePage(request):
     return render(request, 'profile.html')
 
 def signup(request):
-    if request.mehtod == 'POST':
+    if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
