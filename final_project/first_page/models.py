@@ -5,7 +5,7 @@ class Course(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     instructor = models.CharField(max_length=100)
-    number_Class_Days = models.CharField(max_le ngth=80)
+    number_Class_Days = models.CharField(max_lenght=80)
     extra_Assign = models.CharField(max_length=80)
 
 class StudentSign(models.Model):
