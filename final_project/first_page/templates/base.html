@@ -22,15 +22,8 @@
 
     <div class = "topnav" style="float: right;">
         <a class="active" href="{% url 'first_homePage' %}">Home</a>
-        <a class="active" href="{% url 'courses' %}">Courses</a>
+        <a class="active" href="{% url 'course_list' %}">Courses</a>
         <a class="active" href="{% url 'about_basePage' %}">About Us</a>
-        {% if user.is_authenticated %}
-        <a href="{% url 'profile' %}">Profile</a>
-        <a href="{% url 'logout' %}">Log Out</a>
-        {% else %}
-        <a href="{% url 'login' %}">Log In</a>
-        <a href="{% url 'register' %}">Sign Up</a>
-        {% endif %}
 
     </div>
 

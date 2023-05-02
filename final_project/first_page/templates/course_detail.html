@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="course-container">
+        <h2>{{ course.title }}</h2>
+        <p>{{ course.description }}</p>
+        <p>Duration: {{ course.duration }}</p>
+        <p>Price: {{ course.price }}</p>
+    </div>
+{% endblock %}

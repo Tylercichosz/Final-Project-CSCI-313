@@ -1,7 +1,5 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
-from .form import CustomUserCreationForm, CustomAuthenticationForm
-from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, get_object_or_404
+from .models import Course
 
 
 
@@ -22,27 +20,10 @@ def courses(request):
     ]
     return render(request,'courses.html', {'courses': courses})\
         
-def register(request):
-    if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('/')
-    else:
-        form = CustomUserCreationForm()
-    return render(request, 'register.html', {'form': form})
+def course_list(request):
+    courses = Course.objects.all()
+    return render(request, 'courses.html', {'courses': courses})
 
-def login(request):
-    if request.method == 'POST':
-        form = CustomAuthenticationForm(data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            return redirect('/')
-    else:
-        form = CustomAuthenticationForm()
-    return render
-
-def profile(request):
-    return render(request, 'profile.html')
+def course_detail(request, course_id):
+    course = get_object_or_404(Course, pk=course_id)
+    return render(request, 'course_detail.html', {'course': course})
