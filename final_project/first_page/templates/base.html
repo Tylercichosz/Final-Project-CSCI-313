@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My Website{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{%static 'css/styles.css'%}">
 </head>
 <body>
     <div>
@@ -17,20 +17,22 @@
             <h1 style="float: right;">Sign In
                 <img src="{% static 'first_page\images\default-avatar.png' %}" style="width: 50px; margin-left: 10px; vertical-align: middle; border-radius: 50%; ">
             </h1>
-        </button>
+        </h1>
     </div>
 
-    <div class = "topnav" style="float: right;">
-        <a class="active" href="{% url 'first_homePage' %}">Home</a>
-        <a class="active" href="{% url 'course_list' %}">Courses</a>
-        <a class="active" href="{% url 'about_basePage' %}">About Us</a>
+    <div class = "topnav" style="float: center;background-color: #646464ee;text-align: center;padding: 14px 16px;">
+        <a class="active" href="{% url 'first_homePage' %}" style="color: rgb(255, 255, 255);font-size: x-large;font-family: monospace;">
+            Home</a>
+        <a class="active" href="{% url 'course_list' %}" style="color: rgb(255, 255, 255);font-size: x-large;font-family: monospace;">
+            Courses</a>
+        <a class="active" href="{% url 'about_basePage' %}" style="color: rgb(255, 255, 255);font-size: x-large;font-family: monospace;">
+            About Us</a>
 
     </div>
 
     <hr>
     
-    {% block content %}
-    {% endblock %}
+    {% block content %} {% endblock %}
     
 </body>
-</html>
+</button>
