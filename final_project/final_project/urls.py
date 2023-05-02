@@ -20,6 +20,6 @@ urlpatterns = [
     path('', views.first_homePage, name='first_homePage'),
     path('About/', views.about_basePage, name='about_basePage'), 
     path('Profile/', views.profile_basePage, name='profile_basePage'), 
-    path('courses/', views.course_list, name='course_list'),
-    path('courses/<int:course_id>/', views.course_detail, name='course_detail'),
+    path('Courses/', views.courses, name='courses'),
 ]
+

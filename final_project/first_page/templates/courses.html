@@ -3,15 +3,9 @@
 {% block content %}
   <h1>My Courses</h1>
   <ul>
-    {% for courses in courses %}
+    {% for course in courses %}
       <li>{{ course.title }} - {{ course.description }}</li>
     {% endfor %}
   </ul>
 
-  <h2>Create a new course</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Create</button>
-  </form>
 {% endblock %}
