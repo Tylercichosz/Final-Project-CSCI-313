@@ -1,35 +1,8 @@
-{%load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="{% static 'first_page\css\styles.css'%}">
-</head>
-<body>
-    <div>
-        <button onclick="location.href='http://127.0.0.1:8000/'">
-            <img src="{% static 'first_page\images\Screenshot 2023-02-28 165518.png'%}" style="width: 125px; height: 125px; float: left;">
-        </button>
-        <button onclick="location.href='http://127.0.0.1:8000/Profile/'">
-            <h1 style="float: right;">Sign In
-                <img src="{% static 'first_page\images\default-avatar.png'%}" style="width: 50px; margin-left: 10px; vertical-align: middle; border-radius: 50%; ">
-            </h1>
-        </button >
-    </div>
+{% extends 'base.html' %}
 
-        <div class = "topnav" style="float: right;">            
-
-            <a class="active" href="http://127.0.0.1:8000/">Home</a>
-            <a class="active" href="http://127.0.0.1:8000/About/">About Us</a>
-        </div>
-    </div>
-    <hr>
-
-    <h2>Profile</h2>
-    <p></p>
-      <form>
-         User Name:<br> <input type="text" name="name" style="color:white">
-      </form>
+{% block content %}
+  <h2>User Profile</h2>
+  <p>First Name: {{ user.first_name }}</p>
+  <p>Last Name: {{ user.last_name }}</p>
+  <p>Email: {{ user.email }}</p>
+{% endblock %}

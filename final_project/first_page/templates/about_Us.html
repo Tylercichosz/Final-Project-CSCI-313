@@ -1,78 +1,53 @@
-{%load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="{% static 'first_page\css\styles.css'%}">
-</head>
-<body>
-    <div>
-        <button onclick="location.href='http://127.0.0.1:8000/'">
-            <img src="{% static 'first_page\images\Screenshot 2023-02-28 165518.png'%}" style="width: 125px; height: 125px; float: left;">
-        </button>
-        <button onclick="location.href='http://127.0.0.1:8000/Profile/'">
-            <h1 style="float: right;">Sign In
-                <img src="{% static 'first_page\images\default-avatar.png'%}" style="width: 50px; margin-left: 10px; vertical-align: middle; border-radius: 50%; ">
-            </h1>
-        </button >
-    </div>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    CHAKES - About_Us
+{% endblock %}
 
-        <div class = "topnav" style="float: right;">            
+{% block content %}
+<h2>About Us</h2>
+<div class="container">
+    <div class="img_col">
+        <img src="{% static 'C:\Users\cicho\Desktop\Final Project CSCI 313\final_project\first_page\static\first_page\images\SelfImage.JPG'%}" width="350" height="350" style="padding-left: 250px; padding-bottom: 50px;">
+</div>
+<div class="text_col">
+    <h1 style="padding-left: 50px; font-size: 42px">Alyssa Callahan</h1>
+    <p style="padding-left: 50px;">Hi! My name is Alyssa Callahan, I am computer science major at NDSU. I am currently attending NDSU, as a commuting student and also have a part time job. With my busy schedule I am still a full time student at NDSU, but I also value my family time.</p>
+    <p style="padding-left: 50px;">During this project I have worked on personas and user stories so that we can set up functions for our website. This is an important step to building the foundation of a web project.</p>
+</div>
+</div>
 
-            <a class="active" href="http://127.0.0.1:8000/">Home</a>
-            <a class="active" href="http://127.0.0.1:8000/About/">About Us</a>
-        </div>
-    </div>
-    <hr>
-    <h2>About Us</h2>
+<div class="container">
+    <div class="img_col">
+        <img src="{% static 'first_page\images\PlaceholderImage1.jpg'%}" width="350" height="350" style="padding-left: 250px; padding-bottom: 50px;">
+</div>
+<div class="text_col">
+    <h1 style="padding-left: 50px; font-size: 42px">Cade Schneeberger</h1>
+    <p style="padding-left: 50px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nam animi, ipsa exercitationem, at iste ratione, esse obcaecati magni officiis dolores nulla possimus molestiae voluptate quia minima incidunt tenetur ex.</p>
+    <p style="padding-left: 50px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum iste quo dolorum nihil. Consequuntur eveniet et in nostrum possimus eum est praesentium. Consequuntur voluptates inventore provident neque quidem ratione nihil.</p>
+</div>
+</div>
 
-    <div class="container">
-        <div class="img_col">
-            <img src="{% static 'first_page\images\PlaceholderImage1.jpg'%}" width="350" height="350" style="padding-left: 250px; padding-bottom: 50px;">
-    </div>
-    <div class="text_col">
-        <h1 style="padding-left: 50px; font-size: 42px">Alyssa Callahan</h1>
-        <p style="padding-left: 50px;">Hi! My name is Alyssa Callahan, I am computer science major at NDSU. I am currently attending NDSU, as a commuting student and also have a part time job. With my busy schedule I am still a full time student at NDSU, but I also value my family time.</p>
-        <p style="padding-left: 50px;">During this project I have worked on personas and user stories so that we can set up functions for our website. This is an important step to building the foundation of a web project.</p>
-    </div>
-    </div>
+<div class="container">
+    <div class="img_col">
+        <img src="{% static 'first_page\images\PlaceholderImage1.jpg'%}" width="350" height="350" style="padding-left: 250px; padding-bottom: 50px;">
+</div>
+<div class="text_col">
+    <h1 style="padding-left: 50px; font-size: 42px">Ebenezer Alomenu</h1>
+    <p style="padding-left: 50px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nam animi, ipsa exercitationem, at iste ratione, esse obcaecati magni officiis dolores nulla possimus molestiae voluptate quia minima incidunt tenetur ex.</p>
+    <p style="padding-left: 50px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum iste quo dolorum nihil. Consequuntur eveniet et in nostrum possimus eum est praesentium. Consequuntur voluptates inventore provident neque quidem ratione nihil.</p>
+</div>
+</div>
 
-    <div class="container">
-        <div class="img_col">
-            <img src="{% static 'first_page\images\PlaceholderImage1.jpg'%}" width="350" height="350" style="padding-left: 250px; padding-bottom: 50px;">
-    </div>
-    <div class="text_col">
-        <h1 style="padding-left: 50px; font-size: 42px">Cade Schneeberger</h1>
-        <p style="padding-left: 50px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nam animi, ipsa exercitationem, at iste ratione, esse obcaecati magni officiis dolores nulla possimus molestiae voluptate quia minima incidunt tenetur ex.</p>
-        <p style="padding-left: 50px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum iste quo dolorum nihil. Consequuntur eveniet et in nostrum possimus eum est praesentium. Consequuntur voluptates inventore provident neque quidem ratione nihil.</p>
-    </div>
-    </div>
+<div class="container">
+    <div class="img_col">
+        <img src="{% static 'first_page\images\SelfImage.JPG'%}" width="350" height="350" style="padding-left: 250px; padding-bottom: 50px;">
+</div>
+<div class="text_col">
+    <h1 style="padding-left: 50px; font-size: 42px">Tyler Cichosz</h1>
+    <p style="padding-left: 50px;">Hello, my name is Tyler and I am a Sophmore in college looking into trying to get a bachlors degree in Computer Science. My home town is in Byron MN which is located about ten minutes out of Rochester MN.</p>
+    <p style="padding-left: 50px;">When it comes to this project, Some of the aspects that I worked on are the header with the interactive buttons to navigate to new pages for the website. As well as this About us page and getting the Loadout setup properly.</p>
+</div>
+</div>
 
-    <div class="container">
-        <div class="img_col">
-            <img src="{% static 'first_page\images\PlaceholderImage1.jpg'%}" width="350" height="350" style="padding-left: 250px; padding-bottom: 50px;">
-    </div>
-    <div class="text_col">
-        <h1 style="padding-left: 50px; font-size: 42px">Ebenezer Alomenu</h1>
-        <p style="padding-left: 50px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nam animi, ipsa exercitationem, at iste ratione, esse obcaecati magni officiis dolores nulla possimus molestiae voluptate quia minima incidunt tenetur ex.</p>
-        <p style="padding-left: 50px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum iste quo dolorum nihil. Consequuntur eveniet et in nostrum possimus eum est praesentium. Consequuntur voluptates inventore provident neque quidem ratione nihil.</p>
-    </div>
-    </div>
-
-    <div class="container">
-        <div class="img_col">
-            <img src="{% static 'first_page\images\SelfImage.JPG'%}" width="350" height="350" style="padding-left: 250px; padding-bottom: 50px;">
-    </div>
-    <div class="text_col">
-        <h1 style="padding-left: 50px; font-size: 42px">Tyler Cichosz</h1>
-        <p style="padding-left: 50px;">Hello, my name is Tyler and I am a Sophmore in college looking into trying to get a bachlors degree in Computer Science. My home town is in Byron MN which is located about ten minutes out of Rochester MN.</p>
-        <p style="padding-left: 50px;">When it comes to this project, Some of the aspects that I worked on are the header with the interactive buttons to navigate to new pages for the website. As well as this About us page and getting the Loadout setup properly.</p>
-    </div>
-    </div>
-
-
-</body>
-</html>
+{% endblock %}
