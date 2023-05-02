@@ -10,8 +10,8 @@ def about_basePage(request):
 def profile_basePage(request):
     return render(request, 'profile.html')
 def courses(request):
-    return render(request, 'courses.html')
-        
+    courses = Course.objects.all()
+    return render(request, 'courses.html', {'courses': courses})
 
 def course_list(request):
     courses = Course.objects.all()
@@ -45,3 +45,12 @@ def create_course(request):
         form = CourseForm()
     return render(request, 'create_course.html', {'form': form})
 
+def course_add(request):
+    if request.method == 'POST':
+        form = CourseForm(request.POST)
+        if form.is_valid():
+            course = form.save()
+            return redirect('course_detail', course_id=course.id)
+    else:
+        form = CourseForm()
+    return render(request, 'course_add.html', {'form': form})

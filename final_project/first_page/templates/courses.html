@@ -1,11 +1,16 @@
+<!-- courses.html -->
+
 {% extends 'base.html' %}
 
 {% block content %}
   <h1>My Courses</h1>
-  <ul>
-    {% for course in courses %}
-      <li>{{ course.title }} - {{ course.description }}</li>
-    {% endfor %}
-  </ul>
-
+  {% if courses %}
+    <ul>
+      {% for course in courses %}
+        <li>{{ course.title }} - {{ course.description }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No courses found.</p>
+  {% endif %}
 {% endblock %}
