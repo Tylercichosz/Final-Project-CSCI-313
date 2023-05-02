@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 
-{% block content %}
-  <h2>User Profile</h2>
-  <p>First Name: {{ user.first_name }}</p>
-  <p>Last Name: {{ user.last_name }}</p>
-  <p>Email: {{ user.email }}</p>
-{% endblock %}
+        <div class = "topnav" style="float: right;">            
+
+            <a class="active" href="http://127.0.0.1:8000/">Home</a>
+            <a class="active" href="http://127.0.0.1:8000/About/">About Us</a>
+        </div>
+    </div>
+    <hr>
+
+    <h2>Profile</h2>
+    <p></p>
+      <form>
+         User Name:<br> <input type="text" name="name" style="color:white">
+      </form>
