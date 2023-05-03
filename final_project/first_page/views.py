@@ -50,7 +50,7 @@ def course_add(request):
         form = CourseForm(request.POST)
         if form.is_valid():
             course = form.save()
-            return redirect('course_detail', course_id=course.id)
+            return redirect('http://127.0.0.1:8000/Courses/')
     else:
         form = CourseForm()
     return render(request, 'course_add.html', {'form': form})

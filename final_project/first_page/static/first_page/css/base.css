@@ -1,0 +1,11 @@
+/* base.css */
+
+#course-details {
+  margin-top: 1em;
+  padding: 1em;
+  border: 1px solid black;
+}
+
+#course-details.show {
+  display: block;
+}

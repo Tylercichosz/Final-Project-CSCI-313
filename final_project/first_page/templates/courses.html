@@ -7,10 +7,35 @@
   {% if courses %}
     <ul>
       {% for course in courses %}
-        <li>{{ course.title }} - {{ course.description }}</li>
+        <li>
+          <a href="#"
+             class="course-link"
+             data-title="{{ course.title }}"
+             data-description="{{ course.description }}">
+            {{ course.title }}
+          </a>
+        </li>
       {% endfor %}
     </ul>
+    <div id="course-details" style="display: none;">
+      <h2 id="course-title"></h2>
+      <p id="course-description"></p>
+    </div>
   {% else %}
     <p>No courses found.</p>
   {% endif %}
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.course-link').click(function(event) {
+        event.preventDefault();
+        var title = $(this).data('title');
+        var description = $(this).data('description');
+        $('#course-title').text(title);
+        $('#course-description').text(description);
+        $('#course-details').show();
+      });
+    });
+  </script>
 {% endblock %}
