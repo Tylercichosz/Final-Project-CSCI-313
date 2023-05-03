@@ -17,15 +17,17 @@
         </li>
       {% endfor %}
     </ul>
-    <div id="course-details" style="display: none;">
-      <h2 id="course-title"></h2>
-      <p id="course-description"></p>
-    </div>
   {% else %}
     <p>No courses found.</p>
   {% endif %}
 
+  <div id="course-details" style="display: none;">
+    <h2 id="course-title"></h2>
+    <p id="course-description"></p>
+  </div>
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
   <script>
     $(document).ready(function() {
       $('.course-link').click(function(event) {
@@ -34,7 +36,15 @@
         var description = $(this).data('description');
         $('#course-title').text(title);
         $('#course-description').text(description);
-        $('#course-details').show();
+        $('#course-details').dialog({
+          modal: true,
+          width: 500,
+          buttons: {
+            OK: function() {
+              $(this).dialog('close');
+            }
+          }
+        });
       });
     });
   </script>
