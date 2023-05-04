@@ -1,12 +1,9 @@
 <!-- course_add.html -->
 
-{% extends 'base.html' %}
-
-{% block content %}
-  <h1>Add Course</h1>
-  <form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Add Course</button>
-  </form>
+{% extends 'base.html' %} {% block content %}
+<h1 style="font-family: monospace; text-align: center">Add Course</h1>
+<form method="POST">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit" style="font-family: monospace">Add Course</button>
+</form>
 {% endblock %}
