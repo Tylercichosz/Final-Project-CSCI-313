@@ -1,8 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
+<h2 style="font-family: monospace">User Profile</h2>
+<p>First Name: {{ user.first_name }} Place holder for users first name</p>
+<p>Last Name: {{ user.last_name }} Place holder for users last name</p>
+<p>Email: {{ user.email }} Place holder for users email address</p>
 
-{% block content %}
-  <h2>User Profile</h2>
-  <p>First Name: {{ user.first_name }}</p>
-  <p>Last Name: {{ user.last_name }}</p>
-  <p>Email: {{ user.email }}</p>
 {% endblock %}
