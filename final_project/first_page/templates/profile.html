@@ -1,7 +1,15 @@
 {% extends 'base.html' %} {% block content %}
-<h2 style="font-family: monospace">User Profile</h2>
-<p>First Name: {{ user.first_name }} Place holder for users first name</p>
-<p>Last Name: {{ user.last_name }} Place holder for users last name</p>
-<p>Email: {{ user.email }} Place holder for users email address</p>
+<table
+  style="margin-right: auto; margin-left: auto; margin-top: 4rem; border: solid"
+>
+  <th>
+    <h2 style="font-family: monospace">
+      <u>User Profile</u>
+    </h2>
 
+    <p>First Name: {{ user.first_name }} Place holder for users first name</p>
+    <p>Last Name: {{ user.last_name }} Place holder for users last name</p>
+    <p>Email: {{ user.email }} Place holder for users email address</p>
+  </th>
+</table>
 {% endblock %}
