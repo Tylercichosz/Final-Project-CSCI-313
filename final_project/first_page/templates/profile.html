@@ -1,8 +1,14 @@
+<!-- profile.html -->
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>User Profile</h2>
-  <p>First Name: {{ user.first_name }}</p>
-  <p>Last Name: {{ user.last_name }}</p>
-  <p>Email: {{ user.email }}</p>
+  <h1>Welcome to your profile</h1>
+  {% if user.is_authenticated %}
+    <p>You are logged in as {{ user.username }}</p>
+    <a href="{% url 'logout' %}">Logout</a>
+  {% else %}
+    <p>You are not logged in.</p>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'signup' %}">Sign up</a>
+  {% endif %}
 {% endblock %}

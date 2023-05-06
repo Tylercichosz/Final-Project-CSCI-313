@@ -22,6 +22,12 @@ urlpatterns = [
     path('Profile/', views.profile_basePage, name='profile_basePage'), 
     path('Courses/', views.courses, name='courses'),
     path('add/', views.course_add, name='course_add'),
-
+    path('delete-course/', views.delete_course, name='delete_course'),
+    path('signup/', views.signup, name='signup'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
 ]
+
+
+
 
