@@ -73,7 +73,7 @@ def signup(request):
             password = form.cleaned_data.get('password1')
             user = authenticate(request, username=username, password=password)
             login(request, user)
-            return redirect('home')
+            return redirect('http://127.0.0.1:8000/Profile/')
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
@@ -85,14 +85,14 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return redirect('http://127.0.0.1:8000/Profile/')
         else:
             return render(request, 'login.html', {'error_message': 'Invalid login credentials.'})
     return render(request, 'login.html')
 
 def logout_view(request):
     logout(request)
-    return redirect('home')
+    return redirect('http://127.0.0.1:8000/Profile/')
 
 
 
