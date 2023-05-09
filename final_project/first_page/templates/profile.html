@@ -4,14 +4,7 @@
 
 {% block content %}
   <h1>Welcome to your profile</h1>
-  {% if user.is_authenticated %}
-    <p>You are logged in as {{ user.username }}</p>
-    <a href="{% url 'logout' %}">Logout</a>
-  {% else %}
-    <p>You are not logged in.</p>
-    <a href="{% url 'login' %}">Login</a>
-    <a href="{% url 'signup' %}">Sign up</a>
-  {% endif %}
+
 
 <table
   style="margin-right: auto; margin-left: auto; margin-top: 4rem; border: solid"
@@ -21,9 +14,16 @@
       <u>User Profile</u>
     </h2>
 
-    <p>First Name: {{ user.first_name }} Place holder for users first name</p>
-    <p>Last Name: {{ user.last_name }} Place holder for users last name</p>
-    <p>Email: {{ user.email }} Place holder for users email address</p>
+    <p>First Name: {{ user.first_name }} </p>
+    <p>Last Name: {{ user.last_name }} </p>
+    <p>Email: {{ user.email }} </p>
+    {% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'signup' %}">Sign up</a>
+  {% endif %}
+
   </th>
-</table>
+</table>  
 {% endblock %}
