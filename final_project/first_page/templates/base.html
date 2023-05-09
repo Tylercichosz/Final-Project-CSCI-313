@@ -14,11 +14,17 @@
         ;">
             <img src="{% static 'first_page\images\Screenshot 2023-02-28 165518.png' %}" style="width: 125px; height: 125px; float: left;">
         </button>
-        <button onclick="location.href='http://127.0.0.1:8000/Profile/'" style="float: right
-        ;margin-top: 1rem; margin-right: 0.5rem;">
-            <h1 style="float: right;"> <p>{{ user.first_name }}</p>
-                <img src="{% static 'first_page\images\default-avatar.png' %}" style="width: 50px; margin-left: 10px; vertical-align: middle; border-radius: 50%; ">
-            </h1>
+        <button onclick="location.href='http://127.0.0.1:8000/Profile/'" style="float: right; margin-top: 1rem; margin-right: 0.5rem;">
+            <div style="display: flex; align-items: center;">
+
+                {% if user.is_authenticated %}
+                <h1 style="margin-right: 10px; margin-bottom: 0;">{{ user.first_name }}</h1>
+                {% else %}
+                <h1 style="margin-right: 10px; margin-bottom: 0;">Sign In</h1>
+                {% endif %}
+                <img src="{% static 'first_page\images\default-avatar.png' %}" style="width: 50px; margin-left: 10px; vertical-align: middle; border-radius: 50%;">
+            </div>
+        </button>        
         </h1>
     </div>
 
@@ -29,8 +35,6 @@
             Courses</a>
         <a class="active" href="{% url 'about_basePage' %}" style="color: rgb(255, 255, 255);font-size: x-large;font-family: monospace;">
             About Us</a>
-        <a class="active" href="{% url 'course_add' %}" style="color: rgb(255, 255, 255);font-size: x-large;font-family: monospace;">
-            Add Course</a>
     </div>
     <hr>
     

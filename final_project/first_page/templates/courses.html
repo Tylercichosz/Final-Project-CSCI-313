@@ -1,25 +1,29 @@
-<!-- courses.html -->
 {% extends 'base.html' %}
 
 {% block content %}
-
   <h1 style="font-family: monospace; margin-left: 2rem">My Courses</h1>
-  {% if courses %}
-    <ul>
-      {% for course in courses %}
-        <li>
-          <a href="#" class="course-link"
-             data-title="{{ course.title }}"
-             data-description="{{ course.description }}"
-             data-course-id="{{ course.id }}">
-            {{ course.title }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
+
+  {% if user.is_authenticated %}
+    {% if courses %}
+      <ul>
+        {% for course in courses %}
+          <li>
+            <a href="#" class="course-link"
+              data-title="{{ course.title }}"
+              data-description="{{ course.description }}"
+              data-course-id="{{ course.id }}">
+              {{ course.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>You don't have any courses yet. <a href="{% url 'course_add' %}">Add a course</a>.</p>
+    {% endif %}
   {% else %}
-    <p>No courses found.</p>
+    <p>You need to <a href="{% url 'login' %}?next={% url 'courses' %}">sign in</a> to see your courses.</p>
   {% endif %}
+
   <div id="course-details" style="display: none;">
     <h2 id="course-title"></h2>
     <p id="course-description"></p>
@@ -69,10 +73,11 @@
       });
     });
   </script>
-<h1 style="font-family: monospace; margin-top: 4rem; margin-left: 2rem">Attendance</h1>
-<p style="border: 1cm">
-  This section would post attendance from classes as you attend
-</p>
-<p>Trying to get graphicPie pic to show up here</p>
-<p>This showes an example of what attendance in classes could look like</p>
+  
+  <h1 style="font-family: monospace; margin-top: 4rem; margin-left: 2rem">Attendance</h1>
+  <p style="border: 1cm">
+    This section would post attendance from classes as you attend
+  </p>
+  <p>Trying to get graphicPie pic to show up here</p>
+  <p>This shows an example of what attendance in classes could look like</p>
 {% endblock %}
