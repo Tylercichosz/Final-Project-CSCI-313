@@ -16,9 +16,12 @@
             </a>
           </li>
         {% endfor %}
+        <button onclick="location.href='{% url 'course_add' %}'" style="margin-left: 2rem; margin-top: 1rem; font-family: monospace;">Add Course</button>
+
       </ul>
     {% else %}
-      <p>You don't have any courses yet. <a href="{% url 'course_add' %}">Add a course</a>.</p>
+      <p>You don't have any courses yet. <a href="{% url 'course_add' %}">Add a course</a>.</p>  
+      <button onclick="location.href='{% url 'course_add' %}'" style="margin-left: 2rem; margin-top: 1rem; font-family: monospace;">Add Course</button>
     {% endif %}
   {% else %}
     <p>You need to <a href="{% url 'login' %}?next={% url 'courses' %}">sign in</a> to see your courses.</p>
@@ -28,7 +31,7 @@
     <h2 id="course-title"></h2>
     <p id="course-description"></p>
   </div>
-  
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
   <script>
@@ -45,9 +48,6 @@
           modal: true,
           width: 500,
           buttons: {
-            OK: function() {
-              $(this).dialog('close');
-            },
             Delete: function() {
               console.log('Delete button clicked. Course ID: ', courseId);
               $.ajax({
@@ -65,9 +65,6 @@
               });
               $(this).dialog('close');
             },
-            Cancel: function() {
-              $(this).dialog('close');
-            }
           }
         });
       });
